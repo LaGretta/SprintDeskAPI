@@ -1,0 +1,6 @@
+@SprintDeskAPI_HostAddress = http://localhost:5100
+
+GET {{SprintDeskAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

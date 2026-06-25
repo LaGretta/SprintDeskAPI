@@ -1,0 +1,20 @@
+# .NET
+bin/
+obj/
+TestResults/
+*.user
+*.suo
+
+# Rider / IDE
+.idea/
+
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+frontend/*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts
+
+# Local run logs
+*.log
