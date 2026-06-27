@@ -2,6 +2,39 @@
 
 SprintDeskAPI is a team project and task management system built with ASP.NET Core Web API and a modern React frontend. It supports JWT authentication, role-based project and task operations, paginated project/task lists, task status updates, assignment by user id, and task comments.
 
+## How To Run The Full App
+
+This repository contains two apps:
+
+- `SprintDeskAPI/` - ASP.NET Core backend API
+- `frontend/` - React frontend
+
+Running the project from Rider starts the backend only. The frontend must be started separately.
+
+Terminal 1 - backend:
+
+```powershell
+cd D:\GaGu\SprintDeskAPI
+dotnet run --project SprintDeskAPI\SprintDeskAPI.csproj --urls http://localhost:5100
+```
+
+Backend URLs:
+
+- API status page: `http://localhost:5100/`
+- Swagger: `http://localhost:5100/swagger`
+
+Terminal 2 - frontend:
+
+```powershell
+cd D:\GaGu\SprintDeskAPI\frontend
+npm install
+npm run dev
+```
+
+Frontend URL:
+
+- `http://localhost:5173/`
+
 ## Tech Stack
 
 - Backend: ASP.NET Core Web API, .NET 10, Entity Framework Core, SQL Server
@@ -148,28 +181,10 @@ Note: `dotnet build` currently reports a NuGet advisory warning for AutoMapper 1
 
 ## Screenshots
 
-Add screenshots here when preparing the portfolio page:
+Portfolio screenshots to add later:
 
-- Backend tests passing:
-
-  ```md
-  ![Backend tests passing](docs/screenshots/backend-tests.png)
-  ```
-
-- Frontend login/register:
-
-  ```md
-  ![SprintDesk auth screen](docs/screenshots/frontend-auth.png)
-  ```
-
-- Dashboard:
-
-  ```md
-  ![SprintDesk dashboard](docs/screenshots/frontend-dashboard.png)
-  ```
-
-- Projects and tasks:
-
-  ```md
-  ![SprintDesk projects and tasks](docs/screenshots/frontend-workspace.png)
-  ```
+- Backend tests passing
+- Login and registration screen
+- Dashboard overview
+- Projects page
+- Tasks and comments page
