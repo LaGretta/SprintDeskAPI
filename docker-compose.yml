@@ -1,0 +1,39 @@
+﻿version: '3.9'
+
+services:
+  api:
+    build: .
+    container_name: sprintdesk-api
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Server=mssql;Database=SprintDeskPortfolioDb;User Id=sa;Password=YourPassword123!;TrustServerCertificate=true
+      - Jwt__Key=THIS_IS_SUPER_SECRET_KEY_FOR_SPRINT_DESK_API_123456789
+      - Jwt__Issuer=SprintDeskAPI
+      - Jwt__Audience=SprintDeskClient
+      - Jwt__ExpiresMinutes=60
+    depends_on:
+      - mssql
+    networks:
+      - sprintdesk-network
+
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    container_name: sprintdesk-mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=YourPassword123!
+    ports:
+      - "1433:1433"
+    volumes:
+      - mssql_data:/var/opt/mssql
+    networks:
+      - sprintdesk-network
+
+volumes:
+  mssql_data:
+
+networks:
+  sprintdesk-network:
+    driver: bridge
